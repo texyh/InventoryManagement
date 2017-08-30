@@ -1,0 +1,11 @@
+node_modules
+bower_modules
+buildcoverage
+coverage
+**/npm-debug.log*
+**/*.swo
+**/*.swp
+**/.DS_Store
+**/.idea
+.env
+/dist
