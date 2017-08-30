@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './layout/app.component';
+import {InventoryManagementModule} from './InventoryManagement/inventorymanagement.module';
+
+
 
 @NgModule({
   declarations: [
@@ -12,7 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    InventoryManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
