@@ -1,6 +1,7 @@
 require('dotenv').config({ silent: true });
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('express-cors');
 
 const Logger = require('./tracer');
 const routes = require('./routes');
@@ -8,7 +9,11 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT;
 const AppName = process.env.APP_NAME;
+const allowedOrigins = process.env.allowedOrigins;
 
+app.use(cors({
+  allowedOrigins: allowedOrigins.split(',')
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
