@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
@@ -17,7 +18,7 @@
     "sequelize-cli": "^2.8.0"
   },
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node_modules/.bin/sequelize db:migrate && node server.js"
   },
   "repository": {
     "type": "git",
