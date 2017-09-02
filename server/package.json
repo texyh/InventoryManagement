@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node_modules/.bin/sequelize db:migrate && node server.js",
-    "seed:adimin-user": "node_modules/.bin/sequelize db:seed --seed 20170902140457-user.js"
+    "seed:admin-user": "node_modules/.bin/sequelize db:seed --seed 20170902140457-user.js"
   },
   "repository": {
     "type": "git",
