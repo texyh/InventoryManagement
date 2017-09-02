@@ -9,6 +9,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-cors": "0.0.3",
+    "jsonwebtoken": "^7.4.3",
     "pg": "^7.2.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.7.5",
@@ -18,7 +19,8 @@
     "sequelize-cli": "^2.8.0"
   },
   "scripts": {
-    "start": "node_modules/.bin/sequelize db:migrate && node server.js"
+    "start": "node_modules/.bin/sequelize db:migrate && node server.js",
+    "seed:adimin-user": "node_modules/.bin/sequelize db:seed --seed 20170902140457-user.js"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,9 @@
 require('dotenv').config({ silent: true });
+global.Logger = require('./tracer');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('express-cors');
-
-const Logger = require('./tracer');
 const routes = require('./routes');
 
 const app = express();
