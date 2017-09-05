@@ -2,22 +2,50 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
+    return queryInterface.createTable('assets', {
+      id : {
+        allowNull :false,
+        primaryKey:true,
+        type: Sequelize.INTEGER
+      },
 
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+      assetName: {
+        allowNull :false,
+        type: Sequelize.STRING,
+      },
+
+      description: {
+        allowNull :false,
+        type: Sequelize.STRING,
+      },
+
+      serialNumber: {
+        allowNull :false,
+        type: Sequelize.STRING,
+        unique:true,
+      },
+
+      companySerialCode: {
+        type: Sequelize.STRING,
+        allowNull:false,
+        unique:true
+      },
+
+      dateBought: {
+        type: Sequelize.DATE,
+
+      },
+      
+      status: {
+         type: Sequelize.ENUM,
+         values: ['assigned', 'lost', 'available'],
+         defaultValue: 'available'         
+      }
+
+    });
   },
 
   down: function (queryInterface, Sequelize) {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
+      return queryInterface.dropTable('assets');
   }
 };
